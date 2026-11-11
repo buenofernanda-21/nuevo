@@ -22,15 +22,15 @@ export function showRegisterView(container, presenter) {
                 <form id="register-form" class="auth-form">
 
                     <div class="form-group">
-                        <label for="register-name">
-                            Nombre
+                        <label for="register-institucion">
+                            ingrese el nombre de la institucion
                         </label>
 
                         <input
                             type="text"
-                            id="register-name"
+                            id="register-institucion"
                             name="name"
-                            placeholder="Tu nombre"
+                            placeholder="ingrese el nombre de la institucion"
                             required
                         >
                     </div>
@@ -50,15 +50,15 @@ export function showRegisterView(container, presenter) {
                     </div>
 
                     <div class="form-group">
-                        <label for="register-password">
-                            Contraseña
+                        <label for="register-genero">
+                            indique su genero
                         </label>
 
                         <input
-                            type="password"
-                            id="register-password"
-                            name="password"
-                            placeholder="Crea una contraseña"
+                            type="text"
+                            id="register-genero"
+                            name="genero"
+                            placeholder="indique su genero"
                             required
                         >
                     </div>
@@ -104,6 +104,7 @@ export function showRegisterView(container, presenter) {
         const formData = new FormData(registerForm);
 
         const userData = {
+            institucion: formData.get("institucion"),
             name: formData.get("name"),
             email: formData.get("email"),
             password: formData.get("password")
